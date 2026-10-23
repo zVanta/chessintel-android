@@ -10,7 +10,6 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.Response
-import org.json.JSONArray
 import org.json.JSONObject
 import java.io.IOException
 import java.util.concurrent.TimeUnit
@@ -79,13 +78,12 @@ class LibreChatApi {
         onDone: (String) -> Unit,
         onError: (Throwable) -> Unit,
     ) {
-        val messages = JSONArray().put(
-            JSONObject().put("role", "user").put("content", prompt)
-        )
+        // LibreChat's agent chat reads `agent_id` and `text` from the body.
         val payload = JSONObject()
-            .put("agentId", Config.AGENT_ID)
+            .put("endpoint", "agents")
+            .put("agent_id", Config.AGENT_ID)
             .put("conversationId", JSONObject.NULL)
-            .put("messages", messages)
+            .put("text", prompt)
             .toString()
 
         val request = Request.Builder()
