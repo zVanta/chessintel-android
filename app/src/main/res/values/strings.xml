@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ChessIntel Coach</string>
+    <string name="login_title">ChessIntel</string>
+    <string name="login_subtitle">Sign in to your LibreChat account</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="signing_in">Signing in…</string>
+    <string name="chat_hint">Ask about a game, get a lesson or homework…</string>
+    <string name="send">Send</string>
+    <string name="sign_out">Sign out</string>
+    <string name="thinking">ChessIntel is thinking…</string>
+</resources>
